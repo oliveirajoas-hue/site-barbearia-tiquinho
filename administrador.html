@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Barbeiro | Tiquinho Barber</title>
+  <link rel="stylesheet" href="sistema.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="icone-girando" aria-hidden="true">💈</span> PAINEL DO BARBEIRO — TIQUINHO</h1>
+    <div class="topbar-actions">
+      <a href="index.html" class="btn btn-outline">Voltar ao Site</a>
+      <button id="btn-logout" class="btn btn-danger hidden">Sair</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- LOGIN DO ADMIN -->
+    <section id="admin-login-section" class="card">
+      <h2>Acesso Administrativo</h2>
+      <form id="form-admin-login">
+        <div class="form-group">
+          <label for="admin-senha">Chave de Acesso</label>
+          <input type="password" id="admin-senha" required placeholder="Digite a chave administrativa" />
+        </div>
+        <button type="submit" class="btn btn-gold btn-full">Entrar no Painel</button>
+      </form>
+    </section>
+
+    <!-- PAINEL (OCULTO ATÉ LOGAR) -->
+    <section id="admin-dashboard" class="hidden">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span>Agendamentos Hoje</span>
+          <strong id="stat-hoje">0</strong>
+        </div>
+        <div class="stat-box">
+          <span>Faturamento Estimado (Mês)</span>
+          <strong id="stat-faturamento">R$ 0</strong>
+        </div>
+        <div class="stat-box">
+          <span>Total de Clientes</span>
+          <strong id="stat-clientes">0</strong>
+        </div>
+      </div>
+
+      <!-- BLOQUEAR HORÁRIO -->
+      <div class="card">
+        <h2>Bloquear Horário</h2>
+        <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+          Usa a data escolhida no filtro abaixo.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <select id="bloquear-horario-select" style="width: auto;"></select>
+          <input type="text" id="bloquear-motivo" placeholder="Motivo (opcional)" style="flex: 1; min-width: 160px;" />
+          <button id="btn-bloquear-horario" class="btn btn-gold">Bloquear</button>
+        </div>
+      </div>
+
+      <!-- FILTRO E LISTAGEM -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+          <h2 style="margin-bottom: 0; border: none; padding: 0;">Gerenciar Agendamentos</h2>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <label for="filtro-data" style="margin: 0; font-size: 0.85rem;">Filtrar Data:</label>
+            <input type="date" id="filtro-data" style="padding: 0.4rem; width: auto;" />
+            <button id="btn-limpar-filtro" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Todos</button>
+          </div>
+        </div>
+        <div id="lista-agendamentos-admin">
+          <p class="text-muted">Carregando agendamentos...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

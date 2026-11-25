@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar Horário | Tiquinho Barber</title>
+  <link rel="stylesheet" href="sistema.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="tesoura-3d" aria-hidden="true">✂️</span> TIQUINHO BARBER</h1>
+    <div class="topbar-actions">
+      <a href="index.html" class="btn btn-outline">Voltar ao Site</a>
+      <button id="btn-logout" class="btn btn-danger hidden">Sair</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- TELA DE LOGIN / CADASTRO -->
+    <section id="auth-section" class="card">
+      <div class="tabs">
+        <button id="tab-login" class="btn btn-gold" style="flex: 1;">Entrar</button>
+        <button id="tab-cadastro" class="btn btn-outline" style="flex: 1;">Criar Conta</button>
+      </div>
+
+      <!-- FORMULÁRIO DE LOGIN -->
+      <form id="form-login">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="login-email" required placeholder="seuemail@exemplo.com" />
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" id="login-senha" required placeholder="Sua senha" />
+        </div>
+        <button type="submit" class="btn btn-gold btn-full">Entrar</button>
+      </form>
+
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <form id="form-cadastro" class="hidden">
+        <div class="form-group">
+          <label>Seu Nome Completo</label>
+          <input type="text" id="cad-nome" placeholder="Ex: João Silva" />
+        </div>
+        <div class="form-group">
+          <label>WhatsApp / Telefone</label>
+          <input type="tel" id="cad-telefone" placeholder="(79) 99999-9999" />
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="cad-email" placeholder="seuemail@exemplo.com" />
+        </div>
+        <div class="form-group">
+          <label>Senha (mínimo 6 caracteres)</label>
+          <input type="password" id="cad-senha" placeholder="******" />
+        </div>
+        <button type="submit" class="btn btn-gold btn-full">Criar Conta e Entrar</button>
+      </form>
+    </section>
+
+    <!-- PAINEL DE AGENDAMENTO (OCULTO ATÉ LOGAR) -->
+    <section id="booking-section" class="hidden">
+      <div class="card">
+        <h2>Novo Agendamento — Olá, <span id="user-name-display">Cliente</span>!</h2>
+        
+        <div class="form-group">
+          <label>1. Escolha o Serviço</label>
+          <select id="select-servico">
+            <option value="">Selecione um serviço...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>2. Escolha a Data</label>
+          <input type="date" id="input-data" />
+        </div>
+
+        <div class="form-group">
+          <label>3. Horários Disponíveis</label>
+          <p id="aviso-data" class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.5rem;">Selecione uma data para ver os horários.</p>
+          <div id="horarios-grid" class="horarios-grid"></div>
+        </div>
+
+        <button id="btn-confirmar-agendamento" class="btn btn-gold btn-full mt-1" disabled>Confirmar Agendamento</button>
+      </div>
+
+      <!-- MEUS AGENDAMENTOS -->
+      <div class="card">
+        <h2>Meus Agendamentos</h2>
+        <div id="lista-meus-agendamentos">
+          <p class="text-muted">Carregando seus horários...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/agendar.js"></script>                                                                                           </body>
+</html>

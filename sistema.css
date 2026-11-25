@@ -1,0 +1,390 @@
+/* sistema.css */
+:root {
+  --bg-dark: #0f0f11;
+  --bg-card: #18181c;
+  --bg-input: #222228;
+  --gold: #d4af37;
+  --gold-hover: #b89628;
+  --text-main: #f4f4f6;
+  --text-muted: #9ca3af;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --border: #2e2e36;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.topbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.topbar h1 {
+  font-size: 1.25rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #000;
+}
+
+.btn-gold:hover {
+  background: var(--gold-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-success {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+  border: 1px solid var(--success);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.btn-success:hover {
+  background: var(--success);
+  color: #000;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.slot-btn {
+  padding: 0.65rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.slot-btn:hover:not(:disabled) {
+  border-color: var(--gold);
+}
+
+.slot-btn.selected {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
+}
+
+.slot-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.booking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-input);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-confirmado { background: rgba(212, 175, 55, 0.2); color: var(--gold); }
+.badge-concluido { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+.badge-cancelado { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+.badge-bloqueado { background: rgba(156, 163, 175, 0.2); color: var(--text-muted); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 12px;
+}
+
+.stat-box span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stat-box strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-top: 0.25rem;
+}
+
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+
+/* Destaque da hero alinhado às cores da logo + flutuação forte */
+.hero-titulo-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: 'Cinzel', Georgia, serif;
+  animation: flutuarHero 2.6s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+.hero-marca-principal {
+  display: block;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  background: linear-gradient(180deg, #f5dc82 0%, var(--gold) 52%, #9e7b1b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.85));
+}
+
+.hero-marca-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: clamp(0.9rem, 1.7vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-marca-sub::before,
+.hero-marca-sub::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.85));
+}
+
+.hero-marca-sub::after {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.85), rgba(212, 175, 55, 0.15));
+}
+
+.hero-subtitulo-logo {
+  color: var(--text-main);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
+  animation: flutuarSubtituloHero 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes flutuarHero {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg) scale(1);
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75));
+  }
+  50% {
+    transform: translateY(-16px) rotate(1deg) scale(1.03);
+    filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.55));
+  }
+}
+
+@keyframes flutuarSubtituloHero {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tesoura 3D flutuando */
+.tesoura-3d {
+  display: inline-block;
+  font-size: 1.25em;
+  line-height: 1;
+  transform-style: preserve-3d;
+  filter:
+    drop-shadow(0 6px 8px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 10px rgba(212, 175, 55, 0.25));
+  animation: flutuarTesoura 3s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+/* Ícone do painel girando */
+.icone-girando {
+  display: inline-block;
+  font-size: 1.25em;
+  line-height: 1;
+  transform-style: preserve-3d;
+  filter:
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 10px rgba(212, 175, 55, 0.25));
+  animation: girarIcone 4s linear infinite;
+  will-change: transform;
+}
+
+@keyframes flutuarTesoura {
+  0%, 100% {
+    transform: translateY(0px) rotate(-8deg) scale(1);
+    filter:
+      drop-shadow(0 6px 8px rgba(0, 0, 0, 0.55))
+      drop-shadow(0 0 10px rgba(212, 175, 55, 0.25));
+  }
+  50% {
+    transform: translateY(-6px) rotate(6deg) scale(1.06);
+    filter:
+      drop-shadow(0 14px 14px rgba(0, 0, 0, 0.4))
+      drop-shadow(0 0 16px rgba(212, 175, 55, 0.4));
+  }
+}
+
+@keyframes girarIcone {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tesoura-3d,
+  .icone-girando,
+  .hero-titulo-logo,
+  .hero-subtitulo-logo {
+    animation: none;
+  }
+}
